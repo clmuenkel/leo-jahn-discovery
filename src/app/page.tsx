@@ -13,15 +13,10 @@ import DiscoverySnapshot from "@/components/DiscoverySnapshot";
 import ProcessMapper from "@/components/ProcessMapper";
 import Closing from "@/components/Closing";
 
-interface PageProps {
-  searchParams: Promise<{ slug?: string }>;
-}
+const DEFAULT_SLUG = "leo-jahn";
 
-export async function generateMetadata({
-  searchParams,
-}: PageProps): Promise<Metadata> {
-  const params = await searchParams;
-  const slug = params.slug || "leo-jahn";
+export async function generateMetadata(): Promise<Metadata> {
+  const slug = DEFAULT_SLUG;
   const prospect = prospects[slug] || defaultProspect;
 
   return {
@@ -33,9 +28,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function Home({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const slug = params.slug || "leo-jahn";
+export default function Home() {
+  const slug = DEFAULT_SLUG;
   const prospect: ProspectConfig = prospects[slug] || defaultProspect;
 
   return (
