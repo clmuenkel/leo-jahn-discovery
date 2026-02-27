@@ -9,6 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { assetPath } from "@/lib/assetPath";
 
 interface BioField {
   icon: LucideIcon;
@@ -138,7 +139,7 @@ export default function TeamSection() {
                     }}
                   >
                     <Image
-                      src={member.image}
+                      src={assetPath(member.image)}
                       alt={member.name}
                       fill
                       className="object-cover transition-transform duration-700 ease-out"

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
 interface NavbarProps {
   companyName?: string;
@@ -32,7 +33,7 @@ export default function Navbar({ companyName }: NavbarProps) {
           <div className="flex h-14 items-center justify-between">
             <div className="flex items-center gap-3">
               <Image
-                src="/evios-logo-blue.png"
+                src={assetPath("/evios-logo-blue.png")}
                 alt="EVIOS"
                 width={80}
                 height={22}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { assetPath } from "@/lib/assetPath";
 
 interface HeroProps {
   companyName: string;
@@ -46,7 +47,7 @@ export default function Hero({
       {watermarkUrl && (
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
           <Image
-            src={watermarkUrl}
+            src={assetPath(watermarkUrl)}
             alt=""
             width={600}
             height={600}
@@ -67,7 +68,7 @@ export default function Hero({
           }}
         >
           <Image
-            src="/evios-logo-blue.png"
+            src={assetPath("/evios-logo-blue.png")}
             alt="EVIOS"
             width={160}
             height={44}
@@ -107,7 +108,7 @@ export default function Hero({
             <div className="mb-5 flex justify-center">
               <div className="bg-white rounded-2xl px-5 py-3 inline-flex items-center justify-center shadow-lg">
                 <Image
-                  src={logoUrl}
+                  src={assetPath(logoUrl)}
                   alt={companyName}
                   width={280}
                   height={80}
